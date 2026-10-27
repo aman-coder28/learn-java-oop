@@ -2,59 +2,27 @@
 import java.util.Scanner;
 
 public class Main {
-
-	public static float getNumber(String text) {
-		try {
-			return Float.parseFloat(text);
-		} catch (NumberFormatException e) {
-			System.err.println("Please enter a number, defaulting to 0!");
-
-			return 0f;
-		}
-	}
-
-	public static float getInput(Scanner scanner, String text) {
+	public static float getNumber(Scanner scanner, String text) {
 		System.out.print(text);
-		String input = scanner.nextLine();
 
-		return getNumber(input);
+		return scanner.hasNextDouble() ? scanner.nextDouble() : 0;
 	}
 
-	public static void perform() {
+	public static void Calculate() {
 		Scanner scanner = new Scanner(System.in);
 
-		float firstNumber = getInput(scanner, "Enter the first number: ");
-		float secondNumber = getInput(scanner, "Enter the second number: ");
+		float firstNumber = getNumber(scanner, "Enter the first number: ");
+		float secondNumber = getNumber(scanner, "Enter the second number: ");
 
 		System.out.println(
-				String.format(
-						"%s + %s = %s",
-						firstNumber,
-						secondNumber,
-						(firstNumber + secondNumber)
-
-				));
+				firstNumber + " + " + secondNumber + " = " + (firstNumber + secondNumber));
 
 		System.out.println(
-				String.format(
-						"%s - %s = %s",
-						firstNumber,
-						secondNumber,
-						(firstNumber - secondNumber)));
-
+				firstNumber + " - " + secondNumber + " = " + (firstNumber - secondNumber));
 		System.out.println(
-				String.format(
-						"%s * %s = %s",
-						firstNumber,
-						secondNumber,
-						(firstNumber * secondNumber)));
-
+				firstNumber + " x " + secondNumber + " = " + (firstNumber * secondNumber));
 		System.out.println(
-				String.format(
-						"%s / %s = %s",
-						firstNumber,
-						secondNumber,
-						(firstNumber / secondNumber)));
+				firstNumber + " / " + secondNumber + " = " + (secondNumber != 0 ? firstNumber + secondNumber : 0));
 	}
 
 	public static void main(String args[]) {

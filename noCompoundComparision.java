@@ -2,11 +2,10 @@ public class noCompoundComparision {
 	public static void main(String[] args) {
 		final int grade = 55;
 		int second = 0;
+
 		if (grade <= 59) {
 			if (grade >= 50) {
 				second += 1;
-			} else {
-				
 			}
 		} 
 
