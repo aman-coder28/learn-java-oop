@@ -1,0 +1,6 @@
+[
+  {
+    "label": "Run Java File",
+    "command": "java $FILE"
+  }
+]

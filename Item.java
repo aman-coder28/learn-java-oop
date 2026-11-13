@@ -1,6 +1,6 @@
 public class Item {
-  private String name;
-  private int quantity;
+  protected String name;
+  protected int quantity;
 
   public Item(String name, int quantity) {
     this.name = name;

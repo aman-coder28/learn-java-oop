@@ -20,14 +20,17 @@ public class Inventory {
   }
 
   void removeItem(String name) {
-    items.remove(items.indexOf(getItem(name)));
+    items.removeIf(x -> x.getName().equals(name));
   }
 
   void updateItem(String name, Item ittem) {
-    var item = items.stream().filter(x -> name.equals(getItem(name).getName())).findFirst();
+    Item item = getItem(name);
 
-    item.get().setQuantity(ittem.getQuantity());
-    item.get().setName(ittem.getName());
+    if (item == null)
+      return;
+
+    item.setQuantity(ittem.getQuantity());
+    item.setName(ittem.getName());
   }
 
   @Override
