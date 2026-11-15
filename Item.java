@@ -1,14 +1,23 @@
-public class Item {
+import java.util.UUID;
+
+public abstract class Item {
+  protected String id;
   protected String name;
   protected int quantity;
 
   public Item(String name, int quantity) {
     this.name = name;
     this.quantity = quantity;
+
+    this.id = UUID.randomUUID().toString().replaceAll("-", "");
   }
 
   String getName() {
     return name;
+  }
+
+  String getID() {
+    return id;
   }
 
   void setName(String name) {
@@ -23,8 +32,5 @@ public class Item {
     this.quantity = q;
   }
 
-  @Override
-  public String toString() {
-    return String.format("%s, quantity: %d.", name, quantity);
-  }
+  public abstract String displayInfo();
 }

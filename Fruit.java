@@ -4,7 +4,7 @@ public class Fruit extends Item {
   }
 
   @Override
-  public String toString() {
+  public String displayInfo() {
     return String.format("Fruit: %s, quantity: %s.", name, quantity);
   }
 }

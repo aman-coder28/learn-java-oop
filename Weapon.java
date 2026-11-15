@@ -8,7 +8,7 @@ public class Weapon extends Item {
   }
 
   @Override
-  public String toString() {
+  public String displayInfo() {
     return String.format("Weapon: %s, Hitpoint: %s, quantity: %s.", name, hitpoint, quantity);
   }
 }

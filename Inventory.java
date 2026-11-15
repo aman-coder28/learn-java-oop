@@ -11,16 +11,16 @@ public class Inventory {
     return items;
   }
 
-  Item getItem(String name) {
-    return items.stream().filter(x -> name.equals(x.getName())).findFirst().orElse(null);
+  Item getItem(String id) {
+    return items.stream().filter(x -> id.equals(x.getID())).findFirst().orElse(null);
   }
 
   void setItem(Item item) {
     items.add(item);
   }
 
-  void removeItem(String name) {
-    items.removeIf(x -> x.getName().equals(name));
+  void removeItem(String id) {
+    items.removeIf(x -> x.getID().equals(id));
   }
 
   void updateItem(String name, Item ittem) {
