@@ -1,6 +1,6 @@
 [
   {
     "label": "Run Java File",
-    "command": "java $FILE"
+    "command": "java ./Main.java"
   }
 ]
