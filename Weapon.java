@@ -1,10 +1,10 @@
 public class Weapon extends Item {
   private int hitpoint;
 
-  public Weapon(WeaponType type, int quantity, int hitpoint) {
+  public Weapon(WeaponType type, int quantity, int hitpt) {
     super(type.name(), quantity);
 
-    this.hitpoint = hitpoint;
+    hitpoint = hitpt;
   }
 
   @Override

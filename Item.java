@@ -5,11 +5,11 @@ public abstract class Item {
   protected String name;
   protected int quantity;
 
-  public Item(String name, int quantity) {
-    this.name = name;
-    this.quantity = quantity;
+  public Item(String n, int q) {
+    name = n;
+    quantity = q;
 
-    this.id = UUID.randomUUID().toString().replaceAll("-", "");
+    id = UUID.randomUUID().toString().replaceAll("-", "");
   }
 
   String getName() {
@@ -20,8 +20,8 @@ public abstract class Item {
     return id;
   }
 
-  void setName(String name) {
-    this.name = name;
+  void setName(String n) {
+    name = n;
   }
 
   int getQuantity() {
@@ -29,7 +29,7 @@ public abstract class Item {
   }
 
   void setQuantity(int q) {
-    this.quantity = q;
+    quantity = q;
   }
 
   public abstract String displayInfo();
